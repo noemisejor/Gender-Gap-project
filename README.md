@@ -1,2 +1,11 @@
-# Gender-Gap-project
-Machine Learning Project: Regression analysis and exploration of the gender pay gap in France 
+# Gender-Gap-project / 2019 INSEE Datasets /ML Project: Exploration of the gender pay gap in France
+Exploration and predictive model of French net salary per hour with the 2019 INSEE salary dataset.
+The Gender Pay Gap (GPG) is defined as “the difference between the amounts of money paid to women and men, often for doing the same work” (Smith, 2012). It is a measurable indicator of gender equality. In France, the gender wage gap still puts female professionals at a notable disadvantage. In 2019, the European average wage gap was improved, dropping to 19.1% while France saw a rise in the gender wage gap, climbing to 16%, the 10th highest in the European Union. The new law requires all French employers with at least 50 employees to seek to eliminate gender pay gaps. Machine learning can address the issue of gender disparity by building a prediction model of the male and female mean wage. A Regression model tells us the separate impact of each factor on pay — gender, as well as other factors — and shows us whether males have a pay advantage or not. The model could help to identify gender disparities and understand the root factors of the gender gap.
+## Datasets
+(https://www.insee.fr/fr/statistiques/2021266#consulter)
+The salary dataset comes from INSEE (the French National Institute of statistics). It was difficult to find other official sources of French wages due to the nature of data and the French regulations of personal data storage. 
+The salary dataset contains key information on the mean net SALARY per HOUR of French citizens according to their place of residence (towns), gender, occupation level, and age. The data is aggregated by town, gender, age and occupation level. Various files/tabs are available depending on groupings: per town (5000 towns), per county (300 counties), per region, etc... 
+I finally chose to train the model on the county-based regrouping because of performance issues I encountered with the 5000-towns' data (by performing TreeExplainer with RandomForest). 
+The town-based salary file was finally used to plot the locations on a map for analysis.
+A dataset of French geographic information is also loaded for the location analysis.
+Before exploration of data, I first adapted manually the "county" dataset with new calculated columns from other existing columns : mean net salary per hour per job level per gender per age range.
